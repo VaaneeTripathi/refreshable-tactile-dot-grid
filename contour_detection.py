@@ -12,7 +12,7 @@ def contour_detection(filename):
 
     # Convert the image to a binary image (with only black and white pixels)
     grayscale_image = cv.cvtColor(image, cv.COLOR_BGR2GRAY)
-    tvalue, threshold_image = cv.threshold(grayscale_image, 127, 255, 0)
+    tvalue, threshold_image = cv.threshold(grayscale_image, 127 , 255, 0)
 
     # Detect the outline
     contours, hierarchy = cv.findContours(threshold_image, cv.RETR_TREE, cv.CHAIN_APPROX_SIMPLE)
