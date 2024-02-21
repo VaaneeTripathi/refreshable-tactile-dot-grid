@@ -25,4 +25,7 @@ def contour_detection(filename):
 
     # Display image
     cv.imshow("Display", blank_image)
-    key = cv.waitKey(0)
+    result = cv.imwrite('image.png', blank_image)
+    cv.waitKey(1000//60)
+
+    return result
