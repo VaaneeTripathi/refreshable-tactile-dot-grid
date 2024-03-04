@@ -3,7 +3,7 @@ import cv2 as cv
 from contour_detection import contour_detection
 import glob
 
-def main(filename):
+def videoConversion(filename):
 
     # Take a videostream, output images 
     video = cv.VideoCapture(filename)
@@ -29,6 +29,5 @@ def main(filename):
     for img in range(len(array_of_frames)):
         out.write(array_of_frames[img])
     out.release()
+    return array_of_frames
 
-
-main('SAMPLE.mp4')
