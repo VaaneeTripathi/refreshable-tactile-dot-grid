@@ -15,13 +15,13 @@ def arrayCompression(array_of_frames):
         for pixel in range(len(current_frame)):
             current_pixel = current_frame[pixel]
             oned_array = []
-            for index in range(len(current_pixel)):
-                if current_pixel[index] == 255:
-                    colour_value = 1
-                    oned_array.append(colour_value)
-                else:
-                    colour_value = 0
-                    oned_array.append(colour_value)
+            # for index in range(len(current_pixel)):
+            if (current_pixel == 255).any() == True:
+                colour_value = 1
+                oned_array.append(colour_value)
+            else:
+                colour_value = 0
+                oned_array.append(colour_value)
             twod_array.append(oned_array)
         threed_array.append(twod_array)
 
