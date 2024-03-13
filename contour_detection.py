@@ -28,3 +28,4 @@ def contour_detection(filename):
     # result = cv.imwrite('image.png', blank_image)
     # cv.waitKey(1000//60)
     return blank_image
+

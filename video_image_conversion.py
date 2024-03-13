@@ -26,8 +26,11 @@ def videoConversion(filename):
     
     out = cv.VideoWriter('project.avi',cv.VideoWriter_fourcc(*'XVID'), 15, (500, 500))
 
-    # for img in range(len(array_of_frames)):
-    #     out.write(array_of_frames[img])
-    # out.release()
+    for img in range(len(array_of_frames)):
+        out.write(array_of_frames[img])
+    out.release()
     return array_of_frames
+
+# with open("output1.txt", "w") as f:
+#     f.write(videoConversion("sample.mp4"))
 
