@@ -34,3 +34,4 @@ def videoConversion(filename):
 # with open("output1.txt", "w") as f:
 #     f.write(videoConversion("sample.mp4"))
 
+videoConversion("sample.mp4")
