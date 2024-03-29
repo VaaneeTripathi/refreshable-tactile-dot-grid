@@ -3,6 +3,8 @@ import sys
 import numpy as np
 from display_video import output
 
+# This program takes the output from display_video, draws a grid, and turns relevant cells white to recreate the contours
+
 # Initialize pygame 
 pygame.init()
 

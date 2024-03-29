@@ -4,6 +4,14 @@ from contour_detection import contour_detection
 import glob
 
 def videoConversion(filename):
+    """Detects contours of an each frame in a video
+
+    Args:
+        filename (.mp4 file): Input video in which contours are to be detected
+
+    Returns:
+        list: array of all frames with contours drawn on them
+    """
 
     # Take a videostream, output images 
     video = cv.VideoCapture(filename)
@@ -34,4 +42,4 @@ def videoConversion(filename):
 # with open("output1.txt", "w") as f:
 #     f.write(videoConversion("sample.mp4"))
 
-videoConversion("sample.mp4")
+# videoConversion("sample.mp4")

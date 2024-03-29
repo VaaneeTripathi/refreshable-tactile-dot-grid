@@ -5,6 +5,14 @@ from contour_detection import contour_detection
 
 
 def displayFrame(frame_array):
+    """In a 2D array replaces 255 with 1
+
+    Args:
+        frame_array (array): 2D array representing a frame
+
+    Returns:
+        array: 2D array of 1s and 0s
+    """
     for row in frame_array:
         for pixel in range(len(row)):
             # print(f"{pixel = }")
