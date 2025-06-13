@@ -56,7 +56,7 @@ This foundation provides the reliable, low-power actuation mechanism necessary f
 - **Control**: STM32F4 microcontroller with ESP8266 WiFi module (UART communication)
 - **Actuation**: Electromagnetic solenoids with bistable mechanical cams (inspired by Vijay's design)
 
-## 📁 Current Implementation Status
+## Current Implementation Status
 
 ```
 refreshable-tactile-dot-grid/
