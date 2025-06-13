@@ -1,4 +1,4 @@
-# Refreshable Tactile Dot Grid
+# Dots: A Frugal Refreshable Tactile Dot Grid
 
 A real-time tactile display system that converts live whiteboard content into tactile feedback for visually impaired students. This project aims to bridge the accessibility gap in STEM education by providing an affordable, dynamic alternative to expensive commercial tactile displays.
 
