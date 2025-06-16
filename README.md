@@ -148,8 +148,6 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 - **Inspiration**: [Vijay's Electromechanical Refreshable Braille Module](https://hackaday.io/project/191181-electromechanical-refreshable-braille-module)
 - **Repository**: [GitHub - Refreshable Tactile Dot Grid](https://github.com/VaaneeTripathi/refreshable-tactile-dot-grid)
-- **Research Paper**: Available in `docs/` folder (academic publication details)
-
 ---
 
 *This project is part of ongoing research in accessible technology for STEM education, supported by Mphasis F1 Foundation and developed at Ashoka University.*
