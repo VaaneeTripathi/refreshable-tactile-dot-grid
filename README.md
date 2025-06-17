@@ -6,7 +6,7 @@ A real-time tactile display system that converts live whiteboard content into ta
 
 Traditional STEM education relies heavily on visual representations—graphs, diagrams, mathematical symbols—creating significant barriers for visually impaired students. Existing commercial tactile displays cost $12,000-$22,500, making them inaccessible to most educational institutions, especially in resource-constrained environments.
 
-The proposed solution provides real-time conversion of instructor whiteboard content into tactile feedback through a 55×75 actuated dot matrix. By targeting a production cost of ~$3,000-$3,500, it aims to make tactile displays accessible to educational institutions while enabling synchronous classroom participation for visually impaired students.
+The proposed solution provides real-time conversion of instructor whiteboard content into tactile feedback through a 55×75 actuated dot matrix. By targeting a production cost of ~$3,000-$3,500, it aims to make tactile displays accessible to educational institutions while enabling synchronous classroom participation for visually impaired students. 
 
 **Key Innovation:** Unlike static tactile graphics that require pre-preparation, this system provides immediate tactile representation of content as it's being written or drawn, allowing visually impaired students to follow along in real-time. Additionally, it opens up the possibility of a 75% cost reduction as compared to currently available market options. 
 
@@ -42,7 +42,7 @@ WiFi transmission → STM32 controller → Individual dot actuators create tacti
 ## Inspiration and Core Technology
 
 ### Single Actuator Design
-Our tactile actuator design is inspired by **Vijay's award-winning Hackaday project** - the "Electromechanical Refreshable Braille Module" from 2023. This innovative approach uses:
+Our tactile actuator design is inspired by [**Vijay's award-winning Hackaday project**](https://hackaday.io/project/191181-electromechanical-refreshable-braille-module) - the "Electromechanical Refreshable Braille Module" from 2023. This innovative approach uses:
 
 - **Miniature electromagnetic solenoids** for actuation force
 - **Bistable mechanical cams** that maintain dot position without continuous power
@@ -55,6 +55,28 @@ This foundation provides the reliable, low-power actuation mechanism necessary f
 - **Network**: TP-Link AC600 dual-band USB WiFi adapter creating dedicated access point
 - **Control**: STM32F4 microcontroller with ESP8266 WiFi module (UART communication)
 - **Actuation**: Electromagnetic solenoids with bistable mechanical cams (inspired by Vijay's design)
+
+
+### Planned Full Implementation (55×75 Grid) Cost Breakdown
+
+| Component | Prototype Cost ($) | Bulk Cost* ($) |
+|-----------|-------------------|-----------------|
+| **Control Electronics** |
+| STM32F4 Microcontroller | 5.00 | 3.50 |
+| ESP8266 WiFi Module | 4.50 | 2.75 |
+| 74HC138 Row Decoders (8) | 6.40 | 3.60 |
+| 74HC595 Shift Registers (10) | 4.00 | 2.50 |
+| MOSFET Drivers (IRLZ34N) (55) | 27.50 | 16.50 |
+| Passive Components | 5.00 | 3.50 |
+| Custom Control PCB | 20.00 | 8.00 |
+| Power Supply (5V 20A) | 25.00 | 16.00 |
+| **Control System Subtotal** | **$97.40** | **$56.35** |
+| **Tactile Actuator Array** |
+| Tactile Dot Grid (4,125 dots) | 3,382.50 | 2,348.75 |
+| *At $0.82/$0.55 per dot* |
+| **Total Full System Cost** | **$3,603.39** | **$2,498.85** |
+
+*Bulk production costs based on 1,000+ unit production runs
 
 ## Current Implementation Status
 
@@ -90,11 +112,11 @@ refreshable-tactile-dot-grid/
 
 1. **Image/Video Capture**: ESP32-CAM or Raspberry Pi Camera captures whiteboard content
 2. **Processing Pipeline**: 
-   - `video_image_conversion.py` extracts frames from video input
-   - `contour_detection.py` identifies key visual elements using OpenCV
+   - [`video_image_conversion.py`](join-the-dots/video_image_conversion.py) extracts frames from video input
+   - [`contour_detection.py`](join-the-dots/contour_detection.py) identifies key visual elements using OpenCV
    - Binary conversion to 55×75 grid format
-3. **Display Preparation**: `display_frame.py` prepares binary data for transmission
-4. **Visualization & Testing**: `visualisation.py` allows preview of tactile patterns
+3. **Display Preparation**: [`display_frame.py`](join-the-dots/display_frame.py) prepares binary data for transmission
+4. **Visualization & Testing**: [`visualisation.py`](join-the-dots/visualisation.py) allows preview of tactile patterns
 5. **Hardware Communication**: Processed data transmitted to microcontroller for actuation
 
 ## Technical Specifications
@@ -114,7 +136,7 @@ refreshable-tactile-dot-grid/
 2. Can the cost be reduced further?
 3. How can it be designed to reduce reliance on ideal circumstances?
 
-The next few moths will be best on research, testing, and prototyping to answer these questions before the project moves forward.
+The next few months will be best on research, testing, and prototyping to answer these questions before the project moves forward.
 
 ### Immediate Development 
 1. **Scale to Full Grid**: Build complete 55×75 actuator array
